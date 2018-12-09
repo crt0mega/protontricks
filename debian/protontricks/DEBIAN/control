@@ -1,0 +1,11 @@
+Package: protontricks
+Version: 20181203-1+crt1
+Architecture: all
+Maintainer: crt0mega <crt0mega@c-r-t.tk>
+Installed-Size: 26
+Depends: python3, winetricks, zenity, git
+Section: unknown
+Priority: optional
+Homepage: https://github.com/crt0mega/protontricks
+Description: A simple wrapper that does winetricks things for Proton enabled games, requires Winetricks.
+ This is a simple wrapper script that uses Winetricks to allow you to specify the game's App ID rather than the full length directory to the Proton prefix itself, I thought this would be easier for some so I decided to upload it for everyone to use!
