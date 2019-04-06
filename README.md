@@ -1,16 +1,13 @@
 # protontricks
-This is a fork of the original project created by sirmentio.
-The original repository is available at [Sirmentio/protontricks](https://github.com/Sirmentio/protontricks).
-
 A simple wrapper that does winetricks things for Proton enabled games, requires Winetricks.
 
 # What is it?
-This is a simple wrapper script that allows you to easily run Winetricks commands for Steam Play/Proton games. This is often useful when a game requires closed-source runtime libraries that are not included with Proton.
+This is a simple wrapper script that uses Winetricks to allow you to specify the game's App ID rather than the full length directory to the Proton prefix itself, I thought this would be easier for some so I decided to upload it for everyone to use!
 
 # Requirements
-* Python 3.4 or newer
+* Python 3 or newer
 * Winetricks
-* Steam Client Beta (comes with Proton)
+* The Steam beta
 
 # Usage
 The basic usage is as follows:
@@ -22,37 +19,28 @@ protontricks -s <GAME NAME>
 # Run winetricks for the game
 protontricks <APPID> <ACTIONS>
 
-# Run a custom command within game's installation directory
-protontricks -c <COMMAND> <APPID>
-
 # Run the protontricks GUI
-protontricks --gui
-
-# Print the protontricks help message
-protontricks --help
+protontricks gui
 ```
 
-Since this is a wrapper, all commands that work for Winetricks will likely work for Protontricks as well
+Since this is a wrapper, all syntax that works for Winetricks will potentially work for Protontricks.
 
-If you have a different Steam directory, you can export ``$STEAM_DIR`` to the directory where Steam is.
+If you have a different Steam directory (Like I do due to Arch's silly directory tomfoolery), you can export ``$STEAM_DIR`` to the directory where Steam is.
 
-If you'd like to use a local version of Winetricks, you can set ``$WINETRICKS`` to the location of your local winetricks installation. You can also set ``$PROTON_VERSION`` to a specific Proton version manually.
+If you'd like to use a local version of Winetricks, you can set ``$WINETRICKS`` to the location of your local winetricks installation. As well, you can set ``$PROTON_VERSION`` to a specific version manually.
 
 [Wanna see Protontricks in action?](https://asciinema.org/a/i2uqz1uZXYACl9NAHYbuZ3TCT)
 
 # Installation
-You can easily install the latest development version using `pip`
-(included with all Python 3.4+ installations):
+I'd say the easiest way to install is by doing the following commands:
 ```sh
-python3 -m pip install git+https://github.com/Matoking/protontricks.git
+wget https://raw.githubusercontent.com/Sirmentio/protontricks/master/protontricks && chmod +x protontricks
+sudo mv protontricks /usr/bin/protontricks
 ```
+## Unofficial packages
+Currently, the following is the current unofficial packages that can make installing and updating much easier. These are not maintained by me because I currently don't have the capacity of knowing how to make distro packages. Feel free to contribute and try to maintain your own distro packages and add them here.
+* [Arch Linux](https://aur.archlinux.org/packages/protontricks-git/)
+* Ubuntu (Nonexistent?)
 
-Or if you only want to install protontricks for the local user:
-```sh
-python3 -m pip install --user git+https://github.com/Matoking/protontricks.git
-```
-
-If you want to install a specific version (in this case **1.1.1**):
-```sh
-python3 -m pip install git+https://github.com/Matoking/protontricks.git@1.1.1
-```
+# Contact
+If you'd like, you can hit me up on twitter @Sirmentio, or on the Linux Gaming Discord, I don't talk much there but I'd be happy to hear from anyone who has something to say!
